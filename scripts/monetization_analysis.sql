@@ -128,4 +128,27 @@ CASE
     ROUND(AVG(global_sales_million ), 2) AS global_sales
 FROM games
 GROUP BY game_type;
+/*
+ * Does Game Pass availability help protect poorly reviewed games? (e.g., Do games with low user scores still achieve decent estimated revenue 
+ * if they are on Game Pass, compared to low-scoring games that rely purely on direct sales?)
+*/
+
+SELECT 
+    CASE 
+        WHEN game_pass_available = 1 THEN 'Game Pass Title'
+        ELSE 'Purchase-Only Title'
+    END AS distribution_model,
+    COUNT(*) AS total_low_scoring_games,
+    ROUND(AVG(estimated_revenue_million_usd), 2) AS avg_revenue_for_bad_games,
+    ROUND(AVG(global_sales_million), 2) AS avg_units_sold_for_bad_games
+FROM games
+WHERE user_score <= 5.0
+GROUP BY game_pass_available;
+
+
+
+
+
+
+
 
