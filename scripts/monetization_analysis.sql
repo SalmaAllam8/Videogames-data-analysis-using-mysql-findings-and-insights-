@@ -114,3 +114,18 @@ FROM games
 GROUP BY game_type;
 
 
+/*
+ What is the average revenue and global sales volume of games available on Game Pass versus traditional purchase-only titles?
+ */
+#
+
+SELECT 
+CASE 
+        WHEN game_pass = 1 THEN 'Game Pass Title'
+        ELSE 'Purchase-Only Title'
+    END AS distribution_model,
+    ROUND(AVG(estimated_revenue_million_usd ), 2) AS average_revenue,
+    ROUND(AVG(global_sales_million ), 2) AS global_sales
+FROM games
+GROUP BY game_type;
+
