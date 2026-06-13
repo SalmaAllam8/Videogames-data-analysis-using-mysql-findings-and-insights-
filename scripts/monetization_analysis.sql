@@ -61,4 +61,28 @@ GROUP BY business_model
 ORDER BY total_revenue_million DESC;
 
 
+/*
+ What is the average Metacritic score (critic sentiment) versus user score (player sentiment) for games
+  with microtransactions and loot boxes compared to those without?
+ */
+
+
+SELECT 
+    CASE 
+        WHEN dlc_released = 0 AND microtransactions = 0 AND loot_boxes = 0 THEN 'No Monetization'
+        ELSE 'Monetized'
+    END AS game_type,
+    ROUND(AVG(metacritic_score), 2) AS Metacritic_score,
+    ROUND(AVG(user_score*10), 2) AS user_score
+FROM games
+
+group by game_type 
+
+
+
+
+
+
+
+
 
