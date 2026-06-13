@@ -151,4 +151,20 @@ GROUP BY game_pass_available;
 
 
 
+/*
+ * Which genres perform best financially when placed on Game Pass versus remaining premium-only?
+ */
 
+
+SELECT 
+    genre,
+    CASE 
+        WHEN game_pass_available = 1 THEN 'Game Pass'
+        ELSE 'Premium-Only'
+    END AS distribution_model,
+    COUNT(*) AS total_games,
+    ROUND(AVG(estimated_revenue_million_usd), 2) AS avg_revenue,
+    ROUND(AVG(global_sales_million), 2) AS avg_units_sold
+FROM games 
+GROUP BY genre, game_pass_available 
+ORDER BY  avg_revenue desc , total_games
