@@ -79,6 +79,23 @@ FROM games
 group by game_type 
 
 
+/*
+ The Sentiment Delta: What is the average gap between critic scores and user scores when predatory monetization
+  (loot boxes/microtransactions) is present? 
+  Does intense monetization cause games to get "review-bombed" by users even if critics like them?
+ */
+SELECT 
+    CASE 
+        WHEN dlc_released = 0 AND microtransactions = 0 AND loot_boxes = 0 THEN 'No Monetization'
+        when dlc_released = 1 AND microtransactions = 1 AND loot_boxes = 1 THEN 'Intense Monetization'
+        else "medium Monetization"
+    END AS game_type,
+    ROUND(AVG(metacritic_score), 2) AS Metacritic_score,
+    ROUND(AVG(user_score*10), 2) AS user_score ,
+    ROUND(AVG(metacritic_score) - AVG(user_score * 10), 2) AS sentiment_delta
+FROM games
+
+group by game_type 
 
 
 
