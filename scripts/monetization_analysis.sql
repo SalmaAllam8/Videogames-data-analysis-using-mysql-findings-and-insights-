@@ -97,9 +97,20 @@ FROM games
 
 group by game_type 
 
+/*
+ Is there a statistical difference in review counts? 
+ Do monetized games provoke a higher volume of user reviews (indicating a highly passionate or angry player base)?
+ */
 
-
-
-
+SELECT 
+    CASE 
+        WHEN dlc_released = 0 AND microtransactions = 0 AND loot_boxes = 0 THEN 'No Monetization'
+        ELSE 'Monetized'
+    END AS game_type,
+    COUNT(*) AS total_games_in_bucket,
+    ROUND(AVG(critic_review_count), 2) AS avg_critic_reviews_per_title,
+    ROUND(AVG(user_review_count), 2) AS avg_user_reviews_per_title
+FROM games
+GROUP BY game_type;
 
 
