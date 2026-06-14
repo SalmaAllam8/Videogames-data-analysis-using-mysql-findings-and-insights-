@@ -168,3 +168,40 @@ SELECT
 FROM games 
 GROUP BY genre, game_pass_available 
 ORDER BY  avg_revenue desc , total_games
+
+
+/*
+ * conclusions
+ */
+
+SELECT 
+    CASE 
+        WHEN game_pass_available = 1 AND (microtransactions = 1 OR loot_boxes = 1) THEN 'Game Pass + Live-Service'
+        WHEN game_pass_available = 1 AND (microtransactions = 0 AND loot_boxes = 0) THEN 'Game Pass + Premium/DLC'
+        WHEN game_pass_available = 0 AND (microtransactions = 1 OR loot_boxes = 1) THEN 'Purchase-Only + Live-Service'
+        ELSE 'Traditional Purchase-Only (No MTX)'
+    END AS strategic_model,
+    COUNT(*) AS total_titles,
+    ROUND(AVG(estimated_revenue_million_usd), 2) AS avg_revenue_million,
+    ROUND(AVG(global_sales_million), 2) AS avg_units_sold_million,
+    ROUND(AVG(metacritic_score) - AVG(user_score * 10), 2) AS sentiment_delta
+FROM videogames.games
+GROUP BY strategic_model
+ORDER BY avg_revenue_million DESC;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
