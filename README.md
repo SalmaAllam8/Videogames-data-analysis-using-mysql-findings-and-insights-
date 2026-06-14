@@ -12,9 +12,49 @@
 ### What type of monetization makes the most revenue?
 To dig deeper, the data was segmented by monetization models to find out which specific strategy yields the highest return.
 
+```
+SELECT 
+    CASE 
+        WHEN dlc_released = 0 AND microtransactions = 0 AND loot_boxes = 0 THEN 'Pure Premium (No Monetization)'
+        WHEN dlc_released = 1 AND microtransactions = 0 AND loot_boxes = 0 THEN 'Expansion Model (DLC Only)'
+        WHEN dlc_released = 0 AND microtransactions = 1 AND loot_boxes = 0 THEN 'Microtransactions Only'
+        WHEN dlc_released = 0 AND microtransactions = 0 AND loot_boxes = 1 THEN 'Loot Boxes Only'
+        WHEN dlc_released = 1 AND microtransactions = 1 AND loot_boxes = 0 THEN 'Hybrid Premium (DLC + MTX)'
+        WHEN dlc_released = 1 AND microtransactions = 0 AND loot_boxes = 1 THEN 'Hybrid Premium (DLC + Loot Boxes)'
+        WHEN dlc_released = 0 AND microtransactions = 1 AND loot_boxes = 1 THEN 'Live Service / F2P Core (MTX + Loot Boxes)'
+        WHEN dlc_released = 1 AND microtransactions = 1 AND loot_boxes = 1 THEN 'Full Monetization (DLC + MTX + Loot Boxes)'
+        ELSE 'Other'
+    END AS monetization_strategy,
+    COUNT(*) AS total_titles,
+    ROUND(SUM(estimated_revenue_million_usd ), 2) AS total_revenue_million,
+    ROUND(AVG(estimated_revenue_million_usd ), 2) AS avg_revenue_per_title,
+    ROUND(AVG(global_sales_million), 2) AS avg_units_sold_million
+FROM videogames.games g 
+GROUP BY 
+  monetization_strategy
+ORDER BY 
+    avg_revenue_per_title DESC;
+```
+
 <img width="1383" height="252" alt="Breakdown of monetization models by revenue" src="https://github.com/user-attachments/assets/734248db-9b8e-4ad8-a3d1-dcc7a88855fb" />
 
-
+```
+SELECT 
+    CASE 
+        WHEN dlc_released = 0 AND microtransactions = 0 AND loot_boxes = 0 THEN 'Pure Premium (No Monetization)'
+        WHEN dlc_released = 1 AND microtransactions = 0 AND loot_boxes = 0 THEN 'Traditional DLC Model (Expansions Only)'
+        WHEN dlc_released = 0 AND (microtransactions = 1 OR loot_boxes = 1) THEN 'Pure Live-Service Model (MTX/Loot Boxes Only)'
+        WHEN dlc_released = 1 AND (microtransactions = 1 OR loot_boxes = 1) THEN 'Hybrid Model (DLC + Live-Service Double-Dip)'
+        ELSE 'Other'
+    END AS business_model,
+    COUNT(*) AS total_titles,
+    ROUND(SUM(estimated_revenue_million_usd ), 2) AS total_revenue_million,
+    ROUND(AVG(estimated_revenue_million_usd ), 2) AS avg_revenue_per_title,
+    ROUND(AVG(global_sales_million), 2) AS avg_units_sold_million
+FROM videogames.games
+GROUP BY business_model
+ORDER BY total_revenue_million DESC;
+```
 <img width="1400" height="261" alt="Critic vs User score for basic monetization" src="https://github.com/user-attachments/assets/6d735e69-ee92-4345-9d15-d16d37b096c4" />
 
 ---
