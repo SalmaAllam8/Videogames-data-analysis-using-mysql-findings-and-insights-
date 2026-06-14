@@ -14,15 +14,17 @@ To dig deeper, the data was segmented by monetization models to find out which s
 
 <img width="1383" height="252" alt="Breakdown of monetization models by revenue" src="https://github.com/user-attachments/assets/734248db-9b8e-4ad8-a3d1-dcc7a88855fb" />
 
+
+<img width="1400" height="261" alt="Critic vs User score for basic monetization" src="https://github.com/user-attachments/assets/6d735e69-ee92-4345-9d15-d16d37b096c4" />
+
 ---
 
 #  2. The Player Backlash (Sentiment Analysis)
 
 Does extracting more revenue come at the cost of player happiness? First, let's look at the baseline difference in criticism between monetized and non-monetized games:
 
-<img width="1400" height="261" alt="Critic vs User score for basic monetization" src="https://github.com/user-attachments/assets/6d735e69-ee92-4345-9d15-d16d37b096c4" />
 
-At a high level, there is almost no massive difference between the aggregate scores of standard monetized vs. non-monetized groups. However, when we isolate **Intense Monetization** (games pushing DLC, microtransactions, *and* loot boxes simultaneously), the true friction appears:
+ there is almost no massive difference between the aggregate scores of standard monetized vs. non-monetized groups. However, when we isolate **Intense Monetization** (games pushing DLC, microtransactions, *and* loot boxes simultaneously), the true friction appears:
 
 <img width="548" height="162" alt="Monetization intensity tiers" src="https://github.com/user-attachments/assets/f0ce16cb-73a1-4f70-af88-801d7cffbaa7" />
 <img width="762" height="192" alt="Sentiment delta for intense monetization" src="https://github.com/user-attachments/assets/14cea59b-df0c-42ad-bad0-f9cb35f19b89" />
