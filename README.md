@@ -39,7 +39,7 @@ Shifting from how games monetize to how players access them, we analyzed the imp
 
 <img width="610" height="157" alt="Game Pass vs Purchase-only baseline revenue" src="https://github.com/user-attachments/assets/eec67c03-a17d-4d2f-9a13-5c952086df07" />
 
-### The Safety Net: What if your game gets bad reviews?
+### What if your game gets bad reviews?
 If a game launches to poor critical and player acclaim, does its distribution model save it from financial disaster? We isolated low-scoring titles to observe the revenue difference:
 
 <img width="1081" height="157" alt="Revenue for low-scoring titles by model" src="https://github.com/user-attachments/assets/21f7938b-8907-49e6-b541-dd42d5a9ab1c" />
