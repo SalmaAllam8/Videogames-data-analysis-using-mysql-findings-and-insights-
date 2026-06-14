@@ -4,7 +4,6 @@
 
 # 1. The Power of Monetization
 
-When analyzing the baseline impact of adding extra revenue streams (DLC, microtransactions, or loot boxes) to video games, the financial signal is unmistakable. 
 
 <img width="582" height="107" alt="Revenue comparison by monetization status" src="https://github.com/user-attachments/assets/955e82a4-10ba-4d93-8394-a59ae61a82b8" />
 
