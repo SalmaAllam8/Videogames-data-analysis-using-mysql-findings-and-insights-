@@ -37,3 +37,39 @@ FROM games g
 
 JOIN genre_champions c ON g.genre = c.genre
 ORDER BY g.genre ASC, gap_from_peak ASC;
+
+
+
+
+
+/*
+we want to divide the market into 4 equal quadrants (Tiers) 
+based entirely on revenue to see if player sentiment drops sharply as you move from low-earning indie
+ tiers to the top-tier mega-earners. */
+
+
+WITH tiered_games AS (
+    SELECT 
+        title,
+        estimated_revenue_million_usd,
+        user_score,
+        NTILE(4) OVER (ORDER BY estimated_revenue_million_usd DESC) AS revenue_tier
+    FROM games
+    WHERE estimated_revenue_million_usd IS NOT NULL AND user_score IS NOT NULL
+)
+SELECT 
+    revenue_tier,
+    COUNT(*) AS total_games_in_tier,
+    ROUND(MIN(estimated_revenue_million_usd), 2) AS min_revenue_in_tier,
+    ROUND(MAX(estimated_revenue_million_usd), 2) AS max_revenue_in_tier,
+    ROUND(AVG(user_score), 2) AS avg_player_sentiment
+FROM tiered_games
+GROUP BY revenue_tier
+ORDER BY revenue_tier ASC;
+
+
+
+
+
+
+
