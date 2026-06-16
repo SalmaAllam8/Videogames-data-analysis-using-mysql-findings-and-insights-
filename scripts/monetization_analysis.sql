@@ -11,7 +11,7 @@ SELECT
     END AS game_type,
     ROUND(SUM(global_sales_million), 2) AS total_sales,
     ROUND(AVG(global_sales_million), 2) AS average_sales
-FROM games
+FROM videogames.games 
 
 group by game_type 
 
@@ -36,7 +36,7 @@ SELECT
     ROUND(SUM(estimated_revenue_million_usd ), 2) AS total_revenue_million,
     ROUND(AVG(estimated_revenue_million_usd ), 2) AS avg_revenue_per_title,
     ROUND(AVG(global_sales_million), 2) AS avg_units_sold_million
-FROM games
+FROM videogames.games g 
 GROUP BY 
   monetization_strategy
 ORDER BY 
@@ -56,7 +56,7 @@ SELECT
     ROUND(SUM(estimated_revenue_million_usd ), 2) AS total_revenue_million,
     ROUND(AVG(estimated_revenue_million_usd ), 2) AS avg_revenue_per_title,
     ROUND(AVG(global_sales_million), 2) AS avg_units_sold_million
-FROM games
+FROM videogames.games
 GROUP BY business_model
 ORDER BY total_revenue_million DESC;
 
@@ -74,7 +74,7 @@ SELECT
     END AS game_type,
     ROUND(AVG(metacritic_score), 2) AS Metacritic_score,
     ROUND(AVG(user_score*10), 2) AS user_score
-FROM games
+FROM videogames.games
 
 group by game_type 
 
@@ -93,7 +93,7 @@ SELECT
     ROUND(AVG(metacritic_score), 2) AS Metacritic_score,
     ROUND(AVG(user_score*10), 2) AS user_score ,
     ROUND(AVG(metacritic_score) - AVG(user_score * 10), 2) AS sentiment_delta
-FROM games
+FROM videogames.games
 
 group by game_type 
 
@@ -110,7 +110,7 @@ SELECT
     COUNT(*) AS total_games_in_bucket,
     ROUND(AVG(critic_review_count), 2) AS avg_critic_reviews_per_title,
     ROUND(AVG(user_review_count), 2) AS avg_user_reviews_per_title
-FROM games
+FROM videogames.games
 GROUP BY game_type;
 
 
@@ -121,13 +121,13 @@ GROUP BY game_type;
 
 SELECT 
 CASE 
-        WHEN game_pass = 1 THEN 'Game Pass Title'
+        WHEN game_pass_available  = 1 THEN 'Game Pass Title'
         ELSE 'Purchase-Only Title'
     END AS distribution_model,
     ROUND(AVG(estimated_revenue_million_usd ), 2) AS average_revenue,
     ROUND(AVG(global_sales_million ), 2) AS global_sales
-FROM games
-GROUP BY game_type;
+FROM videogames.games
+GROUP BY distribution_model;
 /*
  * Does Game Pass availability help protect poorly reviewed games? (e.g., Do games with low user scores still achieve decent estimated revenue 
  * if they are on Game Pass, compared to low-scoring games that rely purely on direct sales?)
@@ -141,7 +141,7 @@ SELECT
     COUNT(*) AS total_low_scoring_games,
     ROUND(AVG(estimated_revenue_million_usd), 2) AS avg_revenue_for_bad_games,
     ROUND(AVG(global_sales_million), 2) AS avg_units_sold_for_bad_games
-FROM games
+FROM videogames.games
 WHERE user_score <= 5.0
 GROUP BY game_pass_available;
 
@@ -165,7 +165,7 @@ SELECT
     COUNT(*) AS total_games,
     ROUND(AVG(estimated_revenue_million_usd), 2) AS avg_revenue,
     ROUND(AVG(global_sales_million), 2) AS avg_units_sold
-FROM games 
+FROM videogames.games 
 GROUP BY genre, game_pass_available 
 ORDER BY  avg_revenue desc , total_games
 
