@@ -117,7 +117,7 @@ Before pitching a new game concept, we must evaluate market saturation against f
 
 <img width="606" height="488" alt="Market Opportunity Scan Matrix" src="https://github.com/user-attachments/assets/58d8aeea-9781-4b41-bba5-8560d47c695c" />
 
-> **Key Market Signal:** As shown above, **Sandbox games** represent a massive market anomaly—they have the lowest competitor density (fewest games produced) yet yield the highest maximum revenue potential. This marks a prime "Blue Ocean" opportunity for a new greenlit title.
+> **Key Market Signal:** As shown above, **Sandbox games** represent a massive market anomaly—they have the lowest competitor density (fewest games produced) yet yield the highest maximum revenue potential. 
 
 ---
 
