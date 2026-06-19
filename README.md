@@ -105,7 +105,7 @@ Not all game types react to subscription services the same way. This breakdown i
 
 
 
-# The Greenfield Portfolio Strategy (Greenlighting New Games)
+# Greenlighting New Games 
 
 This section shifts our focus from historic performance to strategic, forward-looking market placement—helping studio executives determine where to invest development capital next.
 
