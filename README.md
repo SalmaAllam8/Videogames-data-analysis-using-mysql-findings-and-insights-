@@ -101,3 +101,107 @@ Not all game types react to subscription services the same way. This breakdown i
 1. **The Subscription Advantage:** The vast majority of game genres perform better financially when placed on subscription services like Game Pass, leveraging high player volume.
 2. **The Revenue :** Post-launch monetization features drastically increase a game's total revenue ceiling compared to pure premium models.
 3. **The Risk:** Publishers must proceed with caution. **Intense Monetization** creates a severe inflation in player expectations. If a game pushes microtransactions and loot boxes too aggressively, it triggers heavy community backlash, resulting in cratered user scores despite positive critic acclaim.
+
+
+
+
+# The Greenfield Portfolio Strategy (Greenlighting New Games)
+
+This section shifts our focus from historic performance to strategic, forward-looking market placement—helping studio executives determine where to invest development capital next.
+
+---
+
+### # 5 — Scanning the Market for Opportunities
+
+Before pitching a new game concept, we must evaluate market saturation against financial ceilings. We look for high-ceiling, low-competition targets.
+
+<img width="606" height="488" alt="Market Opportunity Scan Matrix" src="https://github.com/user-attachments/assets/58d8aeea-9781-4b41-bba5-8560d47c695c" />
+
+> **Key Market Signal:** As shown above, **Sandbox games** represent a massive market anomaly—they have the lowest competitor density (fewest games produced) yet yield the highest maximum revenue potential. This marks a prime "Blue Ocean" opportunity for a new greenlit title.
+
+---
+
+### # 6 — Quantifying the Revenue Gap
+
+Every genre has a "Genre Champion" that represents the absolute market ceiling. To understand how much market share is left on the table by other titles, this query uses a **Common Table Expression (CTE)** to calculate exactly how far below the peak revenue each game sits.
+
+```sql
+WITH genre_champions AS (
+    SELECT 
+        genre, 
+        MAX(estimated_revenue_million_usd) AS max_genre_revenue
+    FROM videogames.games
+    GROUP BY genre
+)
+SELECT 
+    g.title,
+    g.genre,
+    g.estimated_revenue_million_usd AS game_revenue,
+    c.max_genre_revenue AS champion_revenue,
+    ROUND(c.max_genre_revenue - g.estimated_revenue_million_usd, 2) AS gap_from_peak
+FROM videogames.games g
+JOIN genre_champions c ON g.genre = c.genre
+ORDER BY g.genre ASC, gap_from_peak ASC;
+
+```
+
+### # 7 — The Monetization Tier Bracket (Revenue vs. Player Sentiment)
+To evaluate whether massive financial performance directly damages consumer trust, I used the NTILE(4) window function to divide the entire market into four perfectly equal performance quadrants based purely on revenue.
+
+```sql
+
+WITH tiered_games AS (
+    SELECT 
+        title,
+        estimated_revenue_million_usd,
+        user_score,
+        NTILE(4) OVER (ORDER BY estimated_revenue_million_usd DESC) AS revenue_tier
+    FROM videogames.games
+    WHERE estimated_revenue_million_usd IS NOT NULL AND user_score IS NOT NULL
+)
+SELECT 
+    revenue_tier,
+    COUNT(*) AS total_games_in_tier,
+    ROUND(MIN(estimated_revenue_million_usd), 2) AS min_revenue_in_tier,
+    ROUND(MAX(estimated_revenue_million_usd), 2) AS max_revenue_in_tier,
+    ROUND(AVG(user_score), 2) AS avg_player_sentiment
+FROM tiered_games
+GROUP BY revenue_tier
+ORDER BY revenue_tier ASC;
+
+```
+
+### # 8 — Top Strategic Greenlight Recommendations
+By utilizing ROW_NUMBER() partitioned by genre, this analysis extracts only the Top 2 most profitable combinations of distribution models and monetization frameworks for every single genre in the database.
+
+```sql
+
+WITH ranked_strategies AS (
+    SELECT 
+        genre,
+        CASE 
+            WHEN game_pass_available = 1 AND (microtransactions = 1 OR loot_boxes = 1) THEN 'Game Pass + Live-Service'
+            WHEN game_pass_available = 1 AND (microtransactions = 0 AND loot_boxes = 0) THEN 'Game Pass + Premium'
+            WHEN game_pass_available = 0 AND (microtransactions = 1 OR loot_boxes = 1) THEN 'Purchase-Only + Live-Service'
+            ELSE 'Traditional Purchase-Only'
+        END AS strategic_model,
+        ROUND(AVG(estimated_revenue_million_usd), 2) AS avg_revenue_million,
+        
+        ROW_NUMBER() OVER (
+            PARTITION BY genre 
+            ORDER BY AVG(estimated_revenue_million_usd) DESC
+        ) AS strategy_rank
+    FROM videogames.games
+    GROUP BY genre, game_pass_available, microtransactions, loot_boxes
+)
+SELECT 
+    genre,
+    strategy_rank,
+    strategic_model,
+    avg_revenue_million
+FROM ranked_strategies
+WHERE strategy_rank <= 2
+ORDER BY genre ASC, strategy_rank ASC;
+```
+
+
