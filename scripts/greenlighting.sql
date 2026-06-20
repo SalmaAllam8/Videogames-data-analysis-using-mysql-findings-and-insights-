@@ -3,7 +3,7 @@ which genres are oversaturated and which ones have a high financial ceiling but 
 
 select genre , count(title) as number_of_games , max(estimated_revenue_million_usd) as Maximum_revenue 
 
-from games
+from videogames,games
 
 group by genre 
 having  max(estimated_revenue_million_usd) > (
