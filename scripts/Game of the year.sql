@@ -33,7 +33,7 @@ SELECT
 
     CASE 
         WHEN (critic_points + player_points + commercial_points) >= 90 THEN 'Elite Contender (90%+)'
-        WHEN (critic_points + player_points + commercial_points) >= 60 THEN 'Strong Nominee (60%-85%)'
+        WHEN (critic_points + player_points + commercial_points) >= 60 THEN 'Strong Nominee (60%-89%)'
         WHEN (critic_points + player_points + commercial_points) >= 30 THEN 'Niche/Cult Classic'
         ELSE 'Mainstream Commercial/Flop'
     END AS goty_tier
