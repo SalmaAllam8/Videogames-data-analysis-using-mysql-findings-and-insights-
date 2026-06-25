@@ -17,33 +17,31 @@ WITH goty_metrics AS (
              WHEN metacritic_score >= 80 THEN 20 ELSE 0 END AS critic_points,
              
         CASE WHEN user_score >= 8.5 THEN 30 
-             WHEN user_score >= 7.5 THEN 15 ELSE 0 END AS player_points,
+             WHEN user_score >= 7.5 THEN 15 ELSE 0 END AS player_points
              
-        CASE WHEN global_sales_million >= 5.0 THEN 30 
-             WHEN global_sales_million >= 2.0 THEN 15 ELSE 0 END AS commercial_points
-
+      
     FROM videogames.games
     WHERE metacritic_score IS NOT NULL AND user_score IS NOT NULL AND global_sales_million IS NOT NULL
-)
-SELECT 
+) ,
+goty_metrics_classified AS  (SELECT 
     title,
     genre,
     metacritic_score,
     user_score,
     global_sales_million,
-    (critic_points + player_points + commercial_points) AS goty_probability_score,
+     estimated_revenue_million_usd,
+    (critic_points + player_points ) AS goty_probability_score,
     
 
     CASE 
-        WHEN (critic_points + player_points + commercial_points) >= 90 THEN 'Elite Contender (90%+)'
-        WHEN (critic_points + player_points + commercial_points) >= 60 THEN 'Strong Nominee (60%-89%)'
-        WHEN (critic_points + player_points + commercial_points) >= 30 THEN 'Niche/Cult Classic'
+        WHEN (critic_points + player_points ) >= 70 THEN 'Elite Contender (90%+)'
+        WHEN (critic_points + player_points  )>= 35 THEN 'Strong Nominee (60%-89%)'
+        WHEN (critic_points + player_points ) >= 30 THEN 'Niche/Cult Classic'
         ELSE 'Mainstream Commercial/Flop'
     END AS goty_tier
 
 FROM goty_metrics
-ORDER BY goty_probability_score DESC, global_sales_million DESC;
-
+ORDER BY goty_probability_score DESC, global_sales_million desc)
 SELECT 
     goty_tier,
     COUNT(*) AS total_games,
