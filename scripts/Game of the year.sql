@@ -1,6 +1,9 @@
 /*
  Does winning or being nominated for Game of the Year actually translate to a significant revenue lift, or is it just a vanity metric?
  */
+
+/* "I assigned these weights based on typical GOTY voting criteria */
+
 WITH goty_metrics AS (
     SELECT 
         title,
