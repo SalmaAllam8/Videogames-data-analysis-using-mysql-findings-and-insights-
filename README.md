@@ -3,7 +3,7 @@
 
 <img width="1774" height="887" alt="db70a582-2aa2-471c-ac3f-c0841b90beb1" src="https://github.com/user-attachments/assets/95b743b3-6950-47d3-92bd-077bcfac0ec7" />
 
-
+*End-to-End Data Analysis using SQL, Python, and Machine Learning*
 ---
 
 # 1. The Power of Monetization
