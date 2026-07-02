@@ -5,6 +5,17 @@
 
 *End-to-End Data Analysis using SQL, Python, and Machine Learning*
 ---
+## Introduction
+
+The global video game industry has become one of the fastest-growing sectors of the entertainment market. According to recent industry reports, global revenue is projected to reach approximately $293 billion by 2027, reflecting sustained growth driven by technological innovation and increasing consumer demand.
+
+Modern video games are no longer targeted solely at children. Players span all age groups and demographics, while many AAA titles now rival Hollywood productions in both development budgets and production quality.
+
+Despite its economic significance, the video game industry has received comparatively limited attention within academic data analysis. This project explores historical trends, publisher performance, genre evolution, and commercial success through exploratory data analysis, feature engineering, and machine learning techniques.
+
+
+
+
 
 # 1. The Power of Monetization
 
