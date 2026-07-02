@@ -15,7 +15,18 @@ Despite its economic significance, the video game industry has received comparat
 
 
 
+## Busniess Questions answered 
 
+* Which genres dominated each gaming era?
+* How has the gaming industry evolved over the last four decades?
+* Which publishers consistently produce highly rated games?
+* How long do publishers survive after entering the market?
+* Which games depend most on North American sales?
+* Which games show the greatest disagreement between critics and players?
+* How common are DLC, microtransactions, and loot boxes?
+* Which games are statistical outliers according to Isolation Forest?
+* What was the industry's strongest three-year commercial period?
+* Which modern console exclusives combined critical acclaim with commercial success?
 
 # 1. The Power of Monetization
 
