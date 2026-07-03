@@ -143,7 +143,7 @@ This section shifts our focus from historic performance to strategic, forward-lo
 
 ---
 
-###  5 — Scanning the Market for Opportunities
+ ## 5 — Scanning the Market for Opportunities
 
 Before pitching a new game concept, we must evaluate market saturation against financial ceilings. We look for high-ceiling, low-competition targets.
 
@@ -153,7 +153,7 @@ Before pitching a new game concept, we must evaluate market saturation against f
 
 ---
 
-###  6 — Quantifying the Revenue Gap
+ ## 6 — Quantifying the Revenue Gap
 
 Every genre has a "Genre Champion" that represents the absolute market ceiling. To understand how much market share is left on the table by other titles, this query uses a **Common Table Expression (CTE)** to calculate exactly how far below the peak revenue each game sits.
 
@@ -177,7 +177,7 @@ ORDER BY g.genre ASC, gap_from_peak ASC;
 
 ```
 
-### 7 — The Monetization Tier Bracket (Revenue vs. Player Sentiment)
+## 7 — The Monetization Tier Bracket (Revenue vs. Player Sentiment)
 To evaluate whether massive financial performance directly damages consumer trust, I used the NTILE(4) window function to divide the entire market into four perfectly equal performance quadrants based purely on revenue.
 
 ```sql
@@ -203,7 +203,7 @@ ORDER BY revenue_tier ASC;
 
 ```
 
-###  8 — Top Strategic Greenlight Recommendations
+ ##  8 — Top Strategic Greenlight Recommendations
 By utilizing ROW_NUMBER() partitioned by genre, this analysis extracts only the Top 2 most profitable combinations of distribution models and monetization frameworks for every single genre in the database.
 
 ```sql
