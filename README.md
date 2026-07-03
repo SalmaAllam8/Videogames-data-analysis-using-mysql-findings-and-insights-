@@ -250,10 +250,15 @@ ORDER BY genre ASC, strategy_rank ASC;
 
  <img width="8000" height="5000" alt="6685" src="https://github.com/user-attachments/assets/3bd3f7fd-b72c-428b-a06e-a4071f0d4a1a" />
 
-  
- 
 
-  *Publishers should continue investing in genres with sustained long-term commercial performance while monitoring emerging genres that demonstrate rapid growth.*
+## Genres Investments
+
+  <img width="1156" height="477" alt="image" src="https://github.com/user-attachments/assets/d42e17e2-7c07-4509-870e-d873d5977a90" />
+
+ >Action and Role-Playing have demonstrated compounding growth across all four gaming eras, making them the lowest-risk genres for greenlight investment. Sandbox, despite its small historical footprint (75 titles in the 8-Bit era vs. 155 today), shows accelerating adoption — consistent with our earlier Blue Ocean finding that it carries the highest revenue ceiling per title. Studios should treat Sandbox as a high-upside, lower-competition bet alongside their core Action/RPG slate. Genres like Rhythm and Visual Novel show no meaningful growth across eras and should be deprioritized unless tied to a specific IP strategy.
+
+
+
 
   *Rather than relying solely on new IPs, publishers should maintain successful franchises through remasters, sequels, and cross-platform releases while ensuring each release adds meaningful value.*
 
