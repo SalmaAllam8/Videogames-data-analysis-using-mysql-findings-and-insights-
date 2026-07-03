@@ -246,3 +246,23 @@ ORDER BY genre ASC, strategy_rank ASC;
 
 
 
+ # Business recommendation 
+
+ <img width="8000" height="5000" alt="6685" src="https://github.com/user-attachments/assets/3bd3f7fd-b72c-428b-a06e-a4071f0d4a1a" />
+
+  
+ 
+
+  *Publishers should continue investing in genres with sustained long-term commercial performance while monitoring emerging genres that demonstrate rapid growth.*
+
+  *Rather than relying solely on new IPs, publishers should maintain successful franchises through remasters, sequels, and cross-platform releases while ensuring each release adds meaningful value.*
+
+  *Decision makers should evaluate both commercial and critical performance together instead of relying on a single success metric. Games that perform exceptionally well in one dimension but poorly in another deserve separate strategic investigation.*
+
+  *Regional sales patterns should inform marketing strategies and release priorities. Games with strong regional demand may benefit from targeted advertising campaigns and localized content.*
+
+  *Additional monetization strategies should be evaluated alongside review scores and player reception to ensure they enhance long-term value without negatively affecting player satisfaction.*
+ 
+
+
+
