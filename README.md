@@ -279,6 +279,12 @@ ORDER BY genre ASC, strategy_rank ASC;
 
 >Note: lifetime here is measured as the span between a publisher's first and last recorded release in the dataset. Publishers still active at the dataset's cutoff year are indistinguishable from those that exited — a limitation that affects the curve's right tail and the cliff visible around year 30.
 
+<img width="1175" height="547" alt="image" src="https://github.com/user-attachments/assets/c9f2530a-c7f4-408a-9385-9811c32aecdb" />
+
+>The video game industry has never been larger than it is right now — the peak era in this dataset is the present, not a historical golden age. The 3-year rolling total has grown nearly 3x since 2008, driven by two distinct acceleration events: the online/mobile revolution (~2008) and the post-2020 expansion. For studios deciding when to greenlight a new title, this trend carries a clear signal — the market you're launching into is larger than any market that has ever existed before. New IP launches carry lower baseline risk than historical comparisons suggest, and studios that delay development cycles risk missing a window of compounding market growth.
+
+
+
 
 
 
