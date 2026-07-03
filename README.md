@@ -15,7 +15,7 @@ Despite its economic significance, the video game industry has received comparat
 
 
 
-## Busniess Questions answered 
+## Business Questions answered 
 
 * Which genres dominated each gaming era?
 * How has the gaming industry evolved over the last four decades?
