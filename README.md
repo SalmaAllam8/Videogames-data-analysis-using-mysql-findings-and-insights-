@@ -28,7 +28,13 @@ Despite its economic significance, the video game industry has received comparat
 * What was the industry's strongest three-year commercial period?
 * Which modern console exclusives combined critical acclaim with commercial success?
 
-# 1. The Power of Monetization
+
+  # Questions and analysis using SQL
+  
+  <img width="1680" height="945" alt="What_is_SQL_Database" src="https://github.com/user-attachments/assets/4f1ab479-c86d-4dad-a245-4a02e3930688" />
+
+
+ ## 1. The Power of Monetization
 
 
 <img width="582" height="107" alt="Revenue comparison by monetization status" src="https://github.com/user-attachments/assets/955e82a4-10ba-4d93-8394-a59ae61a82b8" />
@@ -85,7 +91,7 @@ ORDER BY total_revenue_million DESC;
 
 ---
 
-#  2. The Player Backlash (Sentiment Analysis)
+##  2. The Player Backlash (Sentiment Analysis)
 
 Does extracting more revenue come at the cost of player happiness? First, let's look at the baseline difference in criticism between monetized and non-monetized games:
 
@@ -99,7 +105,7 @@ Does extracting more revenue come at the cost of player happiness? First, let's 
 
 ---
 
-#  3. The Subscription Model: Game Pass vs. Direct Sales
+##  3. The Subscription Model: Game Pass vs. Direct Sales
 
 Shifting from how games monetize to how players access them, we analyzed the impact of subscription services. On average, games available on Game Pass earn slightly more revenue overall than purchase-only titles.
 
@@ -114,7 +120,7 @@ The data shows that poorly-reviewed games still manage to achieve decent estimat
 
 ---
 
-# 4. Genre-Specific Performance
+## 4. Genre-Specific Performance
 
 Not all game types react to subscription services the same way. This breakdown isolates financial performance by genre across both distribution pathways:
 
@@ -131,7 +137,7 @@ Not all game types react to subscription services the same way. This breakdown i
 
 
 
-# Greenlighting New Games 
+## Greenlighting New Games 
 
 This section shifts our focus from historic performance to strategic, forward-looking market placement—helping studio executives determine where to invest development capital next.
 
