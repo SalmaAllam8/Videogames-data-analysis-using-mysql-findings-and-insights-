@@ -177,6 +177,9 @@ ORDER BY g.genre ASC, gap_from_peak ASC;
 
 ```
 
+<img width="940" height="738" alt="image" src="https://github.com/user-attachments/assets/33892bb2-62a5-4255-ad79-51076e0b1b1d" />
+
+
 ## 7 — The Monetization Tier Bracket (Revenue vs. Player Sentiment)
 To evaluate whether massive financial performance directly damages consumer trust, I used the NTILE(4) window function to divide the entire market into four perfectly equal performance quadrants based purely on revenue.
 
@@ -202,6 +205,7 @@ GROUP BY revenue_tier
 ORDER BY revenue_tier ASC;
 
 ```
+<img width="1117" height="150" alt="image" src="https://github.com/user-attachments/assets/de4e6272-8dac-43ac-8b70-610b03e03856" />
 
  ##  8 — Top Strategic Greenlight Recommendations
 By utilizing ROW_NUMBER() partitioned by genre, this analysis extracts only the Top 2 most profitable combinations of distribution models and monetization frameworks for every single genre in the database.
@@ -235,6 +239,9 @@ FROM ranked_strategies
 WHERE strategy_rank <= 2
 ORDER BY genre ASC, strategy_rank ASC;
 ```
+
+<img width="800" height="731" alt="image" src="https://github.com/user-attachments/assets/370cef31-754a-4e94-a574-9c081605969d" />
+
 
 
 
