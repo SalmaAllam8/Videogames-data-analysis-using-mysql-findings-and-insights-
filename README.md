@@ -259,8 +259,13 @@ ORDER BY genre ASC, strategy_rank ASC;
 
 
 
+<img width="861" height="515" alt="image" src="https://github.com/user-attachments/assets/5f386350-a245-498e-a747-a0532d2e98f4" />
 
-  *Rather than relying solely on new IPs, publishers should maintain successful franchises through remasters, sequels, and cross-platform releases while ensuring each release adds meaningful value.*
+>The disagreement runs in both directions and each direction signals a different strategic risk. Games like eFootball 2023 and Mortal Kombat IV were underrated by critics but embraced by players — suggesting review-bombing or niche audience bias; publishers shouldn't panic-cut marketing budgets based on Metacritic alone. Conversely, games like Call of Duty: Rising Sun and Counter-Strike Origins received strong critical reception but low player scores — a classic sign of overpromising in marketing or post-launch monetization backlash. Studios should treat a large critic-user gap as an early warning signal requiring investigation, not just a footnote in a post-launch report.
+
+
+
+
 
   *Decision makers should evaluate both commercial and critical performance together instead of relying on a single success metric. Games that perform exceptionally well in one dimension but poorly in another deserve separate strategic investigation.*
 
