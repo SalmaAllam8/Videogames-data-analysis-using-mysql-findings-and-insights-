@@ -237,3 +237,12 @@ ORDER BY genre ASC, strategy_rank ASC;
 ```
 
 
+
+# Questions and analysis using python 
+
+<img width="612" height="387" alt="1_sE8va-oejfkwN21mIo1UKQ" src="https://github.com/user-attachments/assets/77790945-3444-46f5-8763-11bda63b96bf" />
+
+ **[Open the Jupyter Notebook](notebook_analysis.ipynb)**
+
+
+
