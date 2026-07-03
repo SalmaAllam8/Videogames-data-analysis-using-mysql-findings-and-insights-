@@ -44,7 +44,7 @@ Despite its economic significance, the video game industry has received comparat
 ### What type of monetization makes the most revenue?
 To dig deeper, the data was segmented by monetization models to find out which specific strategy yields the highest return.
 
-```
+``` sql []
 SELECT 
     CASE 
         WHEN dlc_released = 0 AND microtransactions = 0 AND loot_boxes = 0 THEN 'Pure Premium (No Monetization)'
@@ -70,7 +70,7 @@ ORDER BY
 
 <img width="1383" height="252" alt="Breakdown of monetization models by revenue" src="https://github.com/user-attachments/assets/734248db-9b8e-4ad8-a3d1-dcc7a88855fb" />
 
-```
+``` sql []
 SELECT 
     CASE 
         WHEN dlc_released = 0 AND microtransactions = 0 AND loot_boxes = 0 THEN 'Pure Premium (No Monetization)'
@@ -157,7 +157,7 @@ Before pitching a new game concept, we must evaluate market saturation against f
 
 Every genre has a "Genre Champion" that represents the absolute market ceiling. To understand how much market share is left on the table by other titles, this query uses a **Common Table Expression (CTE)** to calculate exactly how far below the peak revenue each game sits.
 
-```sql
+```sql []
 WITH genre_champions AS (
     SELECT 
         genre, 
@@ -183,7 +183,7 @@ ORDER BY g.genre ASC, gap_from_peak ASC;
 ## 7 — The Monetization Tier Bracket (Revenue vs. Player Sentiment)
 To evaluate whether massive financial performance directly damages consumer trust, I used the NTILE(4) window function to divide the entire market into four perfectly equal performance quadrants based purely on revenue.
 
-```sql
+```sql []
 
 WITH tiered_games AS (
     SELECT 
@@ -210,7 +210,7 @@ ORDER BY revenue_tier ASC;
  ##  8 — Top Strategic Greenlight Recommendations
 By utilizing ROW_NUMBER() partitioned by genre, this analysis extracts only the Top 2 most profitable combinations of distribution models and monetization frameworks for every single genre in the database.
 
-```sql
+```sql []
 
 WITH ranked_strategies AS (
     SELECT 
