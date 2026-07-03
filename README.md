@@ -259,6 +259,8 @@ ORDER BY genre ASC, strategy_rank ASC;
 
 
 
+
+
 <img width="861" height="515" alt="image" src="https://github.com/user-attachments/assets/5f386350-a245-498e-a747-a0532d2e98f4" />
 
 >The disagreement runs in both directions and each direction signals a different strategic risk. Games like eFootball 2023 and Mortal Kombat IV were underrated by critics but embraced by players — suggesting review-bombing or niche audience bias; publishers shouldn't panic-cut marketing budgets based on Metacritic alone. Conversely, games like Call of Duty: Rising Sun and Counter-Strike Origins received strong critical reception but low player scores — a classic sign of overpromising in marketing or post-launch monetization backlash. Studios should treat a large critic-user gap as an early warning signal requiring investigation, not just a footnote in a post-launch report.
@@ -266,10 +268,11 @@ ORDER BY genre ASC, strategy_rank ASC;
 
 
 
+<img width="1089" height="790" alt="__results___80_1" src="https://github.com/user-attachments/assets/fcacd8c1-6bea-475b-a995-cc5cafc4bae0" />
 
-  *Decision makers should evaluate both commercial and critical performance together instead of relying on a single success metric. Games that perform exceptionally well in one dimension but poorly in another deserve separate strategic investigation.*
 
-  *Regional sales patterns should inform marketing strategies and release priorities. Games with strong regional demand may benefit from targeted advertising campaigns and localized content.*
+>Publishers entering the Sandbox genre should benchmark against Japanese and American studios, which average 99.81M and 83.54M in global sales respectively — far exceeding any other region-genre combination in the dataset. For Sports, Battle Royale, and Shooter, the market is heavily consolidated around the same three regions, making new entrants from Europe or Canada structurally disadvantaged. Smaller publishers should target underserved genre-region gaps — particularly Action and Role-Playing where European publishers show competitive average sales — rather than competing directly in Japan/USA-dominated categories.
+
 
   *Additional monetization strategies should be evaluated alongside review scores and player reception to ensure they enhance long-term value without negatively affecting player satisfaction.*
  
