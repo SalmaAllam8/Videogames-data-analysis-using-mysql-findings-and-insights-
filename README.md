@@ -273,9 +273,14 @@ ORDER BY genre ASC, strategy_rank ASC;
 
 >Publishers entering the Sandbox genre should benchmark against Japanese and American studios, which average 99.81M and 83.54M in global sales respectively — far exceeding any other region-genre combination in the dataset. For Sports, Battle Royale, and Shooter, the market is heavily consolidated around the same three regions, making new entrants from Europe or Canada structurally disadvantaged. Smaller publishers should target underserved genre-region gaps — particularly Action and Role-Playing where European publishers show competitive average sales — rather than competing directly in Japan/USA-dominated categories.
 
+<img width="1005" height="549" alt="image" src="https://github.com/user-attachments/assets/bfb21ff2-94c7-4675-9554-855aa28b0b13" />
 
-  *Additional monetization strategies should be evaluated alongside review scores and player reception to ensure they enhance long-term value without negatively affecting player satisfaction.*
- 
+>The survival curve appears stable at ~100% for 30 years before a sharp drop to ~48% — however this cliff likely reflects data censoring rather than a true industry pattern. Publishers debuting after the mid-1990s don't yet have complete lifecycle data, making long-term survival conclusions unreliable with this dataset alone. A proper survival analysis would require time-to-exit data from an industry database like Crunchbase or Bloomberg.
+
+>Note: lifetime here is measured as the span between a publisher's first and last recorded release in the dataset. Publishers still active at the dataset's cutoff year are indistinguishable from those that exited — a limitation that affects the curve's right tail and the cliff visible around year 30.
+
+
+
 
 
 
