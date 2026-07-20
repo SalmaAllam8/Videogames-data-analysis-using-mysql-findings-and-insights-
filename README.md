@@ -4,6 +4,16 @@
 <img width="1774" height="887" alt="db70a582-2aa2-471c-ac3f-c0841b90beb1" src="https://github.com/user-attachments/assets/95b743b3-6950-47d3-92bd-077bcfac0ec7" />
 
 *End-to-End Data Analysis using SQL, Python, and Machine Learning*
+
+## TL;DR
+
+- Analyzed decades of video game industry data (SQL + Python + ML) to uncover trends in genre performance, monetization, publisher survival, and regional sales.
+- **Monetization pays off** — DLC, microtransactions, and loot boxes significantly boost revenue, but "Intense Monetization" (all three combined) triggers the biggest critic-vs-player score gap and player backlash.
+- **Game Pass beats pure premium** — subscription availability cushions revenue even for poorly-reviewed titles, and most genres perform better on Game Pass than purchase-only.
+- **Sandbox is the blue ocean** — fewest titles produced, highest revenue ceiling per game. Action and RPG are the safest long-term bets; Rhythm and Visual Novel show flat growth.
+- **Geography matters** — Japan and the US dominate Sandbox, Sports, Battle Royale, and Shooter; underserved genre-region combos (e.g. Action/RPG in Europe) offer lower-competition entry points.
+- **The industry is bigger than ever** — 3-year rolling revenue has nearly tripled since 2008, meaning new IP launches today carry lower baseline market risk than history suggests.
+- **Publisher survival data has a caveat** — the apparent ~30-year survival cliff is likely a data-censoring artifact, not a real industry pattern.
 ---
 ## Introduction
 
