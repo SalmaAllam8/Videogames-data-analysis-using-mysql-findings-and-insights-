@@ -301,6 +301,9 @@ ORDER BY genre ASC, strategy_rank ASC;
 >The video game industry has never been larger than it is right now — the peak era in this dataset is the present, not a historical golden age. The 3-year rolling total has grown nearly 3x since 2008, driven by two distinct acceleration events: the online/mobile revolution (~2008) and the post-2020 expansion. For studios deciding when to greenlight a new title, this trend carries a clear signal — the market you're launching into is larger than any market that has ever existed before. New IP launches carry lower baseline risk than historical comparisons suggest, and studios that delay development cycles risk missing a window of compounding market growth.
 
 
+---
+# Dashboard
+<img width="972" height="535" alt="image" src="https://github.com/user-attachments/assets/d9cd1ef1-4b48-4805-827d-80a9e354dad6" />
 
 
 
