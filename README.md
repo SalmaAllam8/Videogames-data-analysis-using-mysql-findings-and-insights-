@@ -302,7 +302,7 @@ ORDER BY genre ASC, strategy_rank ASC;
 
 
 ---
-#Dashboard
+# Dashboard
 <img width="972" height="535" alt="image" src="https://github.com/user-attachments/assets/d9cd1ef1-4b48-4805-827d-80a9e354dad6" />
 
 
